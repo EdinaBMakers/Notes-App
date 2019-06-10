@@ -1,7 +1,7 @@
-function NoteModel(text) {
+function Note(text) {
   this.text = text;
 };
 
-NoteModel.prototype.getNote = function() {
+Note.prototype.getNote = function() {
   return this.text;
 }
