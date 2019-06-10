@@ -11,3 +11,7 @@ NoteList.prototype.list = function() {
     return this.notes[i];
   };
 };
+
+NoteList.prototype.create = function(text) {
+  return new Note(text);
+};

@@ -9,7 +9,13 @@ describe("Note list model", function() {
 
   it("returns all the notes", function() {
     noteList.addNote(note);
-    console.log(noteList.notes)
     assert(noteList.list(), note);
+  });
+
+  it("creates a new note", function() {
+    var noteList = new NoteList();
+    var note = noteList.create("second note");
+    noteList.addNote(note);
+    assert(noteList.list().text, "second note")
   });
 });
