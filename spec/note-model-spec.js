@@ -11,12 +11,16 @@ var describe = function(describe, fn) {
   fn();
 };
 
-describe("it creates a new note", function(){
-  var noteModel = new NoteModel("new note");
-  assert(noteModel.text, "new note");
-});
+var it = function(message, fn)  {
+  describe(" " + message, fn)
+}
 
-describe("it returns a note", function(){
+describe("Note model", function(){
   var noteModel = new NoteModel("new note");
-  assert(noteModel.getNote(), "new note");
+    it("stores a new note", function(){
+    assert(noteModel.text, "new note");
+  });
+    it("returns the note", function(){
+    assert(noteModel.getNote(), "new note");
+  })
 });
