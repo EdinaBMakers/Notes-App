@@ -8,9 +8,7 @@
   };
 
   NoteList.prototype.list = function() {
-    for (var i = 0; i < this.notes.length; ++i) {
-      return this.notes[i];
-    };
+    return this.notes;
   };
 
   NoteList.prototype.create = function(text) {
