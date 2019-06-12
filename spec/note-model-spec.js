@@ -3,7 +3,8 @@ describe("Note model", function(){
     it("stores a new note", function(){
     assert(note.text, "new note");
   });
-    it("returns the note", function(){
+
+  it("returns the note", function(){
     assert(note.getNote(), "new note");
-  })
+  });
 });
