@@ -3,7 +3,7 @@
     this.noteList = noteList;
   };
 
-  NoteListView.prototype.createHtml = function() {
+  NoteListView.prototype.createHTML = function() {
     var htmlString = "<ul>";
 
     for (var i = 0; i < this.noteList.list().length; i++) {

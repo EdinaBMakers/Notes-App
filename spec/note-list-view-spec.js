@@ -13,7 +13,7 @@ describe("Note list view", function() {
     noteList.addNote(firstNote);
     var noteListView = new NoteListView(noteList)
 
-    assert(noteListView.createHtml(), "<ul><li><div>" + firstNote.getNote() + "</div></li></ul>")
+    assert(noteListView.createHTML(), "<ul><li><div>" + firstNote.getNote() + "</div></li></ul>")
   });
 
   it("returns a string of html of the note list if it has not a note",
@@ -21,7 +21,7 @@ describe("Note list view", function() {
     var noteList = new NoteList();
     var noteListView = new NoteListView(noteList)
 
-    assert(noteListView.createHtml(), "<ul></ul>")
+    assert(noteListView.createHTML(), "<ul></ul>")
   });
 
   it("returns a string of html of the note list if it has several notes",
@@ -33,7 +33,7 @@ describe("Note list view", function() {
     noteList.addNote(secondNote);
     var noteListView = new NoteListView(noteList)
 
-    assert(noteListView.createHtml(), 
+    assert(noteListView.createHTML(), 
       "<ul><li><div>"+ firstNote.getNote() + "</div></li>" +
       "<li><div>" + secondNote.getNote() + "</div></li></ul>")
   });

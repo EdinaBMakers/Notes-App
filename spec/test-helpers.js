@@ -14,3 +14,11 @@ var describe = function(describe, fn) {
 var it = function(message, fn)  {
   describe(" " + message, fn)
 }
+
+function FakeElement() {};
+  
+FakeElement.prototype.textContent = "";
+
+var fakeElement = new FakeElement();
+
+document.getElementById = function(id) { return fakeElement; };
