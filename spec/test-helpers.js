@@ -1,8 +1,8 @@
 var assert = function(actual, expected) {
   if(actual != expected) {
-    throw new Error("Fail: " + actual + " is not equal to " + expected)
+    throw new Error("Failed: " + actual + " is not equal to " + expected)
   } else {
-    console.log("Test passing! " + actual + " is equal to " + expected)
+    console.log("Passed! " + actual + " is equal to " + expected)
   }
 };
 
