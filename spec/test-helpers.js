@@ -2,7 +2,7 @@ var assert = function(actual, expected) {
   if(actual != expected) {
     throw new Error("Failed: " + actual + " is not equal to " + expected)
   } else {
-    console.log("Passed! " + actual + " is equal to " + expected)
+    console.log("Passed!");
   }
 };
 
@@ -22,3 +22,9 @@ FakeElement.prototype.textContent = "";
 var fakeElement = new FakeElement();
 
 document.getElementById = function(id) { return fakeElement; };
+
+function FakeNote(id, text) {
+
+  this.getId = function() { return id; };
+  this.getNote = function() { return text; };
+}

@@ -4,7 +4,7 @@ describe("Note list model", function() {
     var note = new Note("new note");
     noteList.addNote(note);
 
-    assert(noteList.notes.length, 1);
+    assert(noteList.list().length, 1);
   });
 
   it("returns all the notes", function() {
@@ -19,7 +19,7 @@ describe("Note list model", function() {
     var noteList = new NoteList();
     var note = noteList.create("second note");
     noteList.addNote(note);
-    
-    assert(noteList.list()[0].getNote(), "second note")
+
+    assert(noteList.list()[0].getText(), "second note")
   });
 });

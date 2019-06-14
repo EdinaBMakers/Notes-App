@@ -1,10 +1,14 @@
 describe("Note model", function(){
-  var note = new Note("new note");
-    it("stores a new note", function(){
-    assert(note.text, "new note");
+  
+  it("has a unigue id by default", function() {
+    var note = new Note("new note");
+
+    assert(note.getId(), 1);
   });
 
-  it("returns the note", function(){
-    assert(note.getNote(), "new note");
+  it("can return the note text", function(){
+    var note = new Note("new note");
+
+    assert(note.getText(), "new note");
   });
 });

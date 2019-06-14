@@ -3,17 +3,21 @@ describe("Note list view", function() {
     var noteList = new NoteList();
     var noteListView = new NoteListView(noteList);
 
-    assert(noteListView.noteList, noteList)
+    assert(noteListView._noteList, noteList)
   });
 
   it("returns a string of html of the note list if it has one note",
     function(){
     var noteList = new NoteList();
-    var firstNote = noteList.create('First note');
-    noteList.addNote(firstNote);
+    var noteId = 1;
+    var noteText = 'First Note';
+    var note = new FakeNote(noteId, noteText);
+    noteList.addNote(note);
     var noteListView = new NoteListView(noteList)
 
-    assert(noteListView.createHTML(), "<ul><li><div>" + firstNote.getNote() + "</div></li></ul>")
+    assert(
+      noteListView.createHTML(), 
+      `<ul><li><div><a href='http://localhost:8080#notes/${noteId}'>${noteText}</a></div></li></ul>`)
   });
 
   it("returns a string of html of the note list if it has not a note",
@@ -27,14 +31,14 @@ describe("Note list view", function() {
   it("returns a string of html of the note list if it has several notes",
     function(){
     var noteList = new NoteList();
-    var firstNote = noteList.create('First note');
+    var firstNote = new FakeNote(1, 'First note which is longer than twenty characters');
+    var secondNote = new FakeNote(2, 'Second note');
     noteList.addNote(firstNote);
-    var secondNote = noteList.create('Second note');
     noteList.addNote(secondNote);
     var noteListView = new NoteListView(noteList)
 
     assert(noteListView.createHTML(), 
-      "<ul><li><div>"+ firstNote.getNote() + "</div></li>" +
-      "<li><div>" + secondNote.getNote() + "</div></li></ul>")
+      "<ul><li><div><a href='http://localhost:8080#notes/1'>First note which is </a></div></li>" +
+      "<li><div><a href='http://localhost:8080#notes/2'>Second note</a></div></li></ul>")
   });
 });  

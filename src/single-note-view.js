@@ -3,8 +3,8 @@
     this.note = note;
    }
  
-   SingleNoteView.prototype.displayHTML = function() {
-     return "<ul><li><div>" + this.note.getNote() + "</div></li></ul>";
+   SingleNoteView.prototype.createHTML = function() {
+     return `<div>${this.note.getText()}</div>`;
    };
 
   exports.SingleNoteView = SingleNoteView;
